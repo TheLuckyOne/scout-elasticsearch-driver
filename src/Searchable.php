@@ -45,6 +45,12 @@ trait Searchable
         static::$isSearchableTraitBooted = true;
     }
 
+    public static function rebootSearchable()
+    {
+        self::$isSearchableTraitBooted = false;
+        self::bootSearchable();
+    }
+
     /**
      * Get the index configurator.
      *
