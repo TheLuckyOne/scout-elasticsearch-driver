@@ -23,34 +23,6 @@ trait Searchable
     private $highlight = null;
 
     /**
-     * Defines if the model is searchable.
-     *
-     * @var bool
-     */
-    protected static $isSearchableTraitBooted = false;
-
-    /**
-     * Boot the trait.
-     *
-     * @return void
-     */
-    public static function bootSearchable()
-    {
-        if (static::$isSearchableTraitBooted) {
-            return;
-        }
-
-        self::sourceBootSearchable();
-
-        static::$isSearchableTraitBooted = true;
-    }
-
-    public static function resetSearchableTraitBoot()
-    {
-        self::$isSearchableTraitBooted = false;
-    }
-
-    /**
      * Get the index configurator.
      *
      * @return \ScoutElastic\IndexConfigurator
