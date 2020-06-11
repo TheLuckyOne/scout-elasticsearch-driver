@@ -45,7 +45,7 @@ trait Searchable
         static::$isSearchableTraitBooted = true;
     }
 
-    public static function rebootSearchable()
+    public static function resetSearchableTraitBoot()
     {
         self::$isSearchableTraitBooted = false;
         self::bootSearchable();
